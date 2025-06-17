@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CommStack Challenge: Crisis of Convenience</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+      color: #333;
+    }
+    .passage {
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px 0;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      border-color: #0074D9;
+    }
+    .hidden {
+      display: none;
+    }
+    .feedback {
+      background-color: #eef6ff;
+      border-left: 6px solid #0074D9;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #0074D9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="passage" id="scenario">
+    <h2>🎴 Scenario: A Crisis of Convenience</h2>
+    <p>You are the public relations director for “QuickEase,” a national convenience store chain. A video goes viral showing one of your store employees refusing service to a customer wearing religious attire, citing a “company dress code policy.”</p>
+    <p>The video sparks public backlash, and #QuickEaseDiscrimination trends online. Civil rights groups demand a formal apology and policy clarification. You must decide how to respond within 12 hours.</p>
+    <p><strong>Choose your card:</strong></p>
+
+    <div class="card" onclick="showPassage('a')">
+      <strong>🟠 Card A:</strong> Issue a holding statement saying the company is investigating.
+    </div>
+    <div class="card" onclick="showPassage('b')">
+      <strong>🟢 Card B:</strong> Apologize, suspend the employee, and mandate diversity training.
+    </div>
+    <div class="card" onclick="showPassage('c')">
+      <strong>🔴 Card C:</strong> Deny the behavior reflects company values and emphasize past community work.
+    </div>
+  </div>
+
+  <div class="passage hidden" id="a">
+    <h3>🟠 You played Card A</h3>
+    <div class="feedback">
+      <p><strong>Consequence:</strong> The public criticizes your response as vague and insufficient. The hashtag continues trending with boycott calls.</p>
+      <p><strong>Layered Insight:</strong> While a holding statement may buy time internally, it often signals hesitation or evasion externally. How might your team prepare a follow-up response that demonstrates more proactive engagement?</p>
+    </div>
+    <button onclick="showReflection()">Continue to Reflection</button>
+  </div>
+
+  <div class="passage hidden" id="b">
+    <h3>🟢 You played Card B</h3>
+    <div class="feedback">
+      <p><strong>Consequence:</strong> Many applaud the accountability, but some employee groups express concern about acting too quickly without a full investigation.</p>
+      <p><strong>Layered Insight:</strong> This action aligns strongly with PRSA ethics, but raises HR and procedural concerns. How might you balance ethical immediacy with fairness in your internal messaging?</p>
+    </div>
+    <button onclick="showReflection()">Continue to Reflection</button>
+  </div>
+
+  <div class="passage hidden" id="c">
+    <h3>🔴 You played Card C</h3>
+    <div class="feedback">
+      <p><strong>Consequence:</strong> Your response is seen as deflective. Trust continues to erode and the video continues to circulate. News outlets report on the lack of direct accountability.</p>
+      <p><strong>Layered Insight:</strong> While defending the brand is tempting, the lack of empathy and action can appear tone-deaf. How might you have acknowledged the issue without immediately accepting fault?</p>
+    </div>
+    <button onclick="showReflection()">Continue to Reflection</button>
+  </div>
+
+  <div class="passage hidden" id="reflection">
+    <h2>📘 Reflection Prompt</h2>
+    <p>In 200–300 words, answer the following:</p>
+    <ul>
+      <li>Why did you choose your selected card?</li>
+      <li>Which PRSA ethical principles supported your decision?</li>
+      <li>What would you need to know before taking this action in real life?</li>
+    </ul>
+    <p>Please submit your response in Canvas.</p>
+  </div>
+
+  <script>
+    function showPassage(id) {
+      document.getElementById("scenario").classList.add("hidden");
+      document.getElementById("a").classList.add("hidden");
+      document.getElementById("b").classList.add("hidden");
+      document.getElementById("c").classList.add("hidden");
+      document.getElementById(id).classList.remove("hidden");
+    }
+    function showReflection() {
+      document.getElementById("a").classList.add("hidden");
+      document.getElementById("b").classList.add("hidden");
+      document.getElementById("c").classList.add("hidden");
+      document.getElementById("reflection").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
